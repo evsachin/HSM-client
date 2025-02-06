@@ -1,22 +1,22 @@
 import React from "react";
-import hero from "../../assets/hero1.jpg";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 
-export default function HeroSection() {
+export default function HeroSection2() {
+  const navigate = useNavigate(); // Initialize navigate function
+
   return (
-    <div className="relative w-full h-[650px]">
-      {/* Background Image */}
-      <img src={hero} alt="Hero Image" className="w-full h-full object-cover" />
-
-      {/* Overlay Text */}
-      {/* <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white text-center p-4">
-        <h1 className="text-4xl font-bold">Welcome to Home Services</h1>
-        <p className="mt-2 text-lg">
-          Find the best professionals for your needs
-        </p>
-        <button className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg">
-          Get Started
-        </button>
-      </div> */}
-    </div>
+    <section className="w-full hero-section bg-blue-500 text-white text-center py-20">
+      <h1 className="text-4xl font-bold">Welcome to Home Service Management</h1>
+      <p className="mt-4 text-lg">
+        Providing reliable and trusted home services, with integrity and care.
+        We're here to solve your home maintenance needs.
+      </p>
+      <button
+        className="mt-6 px-6 py-2 bg-yellow-500 text-black rounded-lg"
+        onClick={() => navigate("/services")} // Redirect to /services
+      >
+        Book a Service
+      </button>
+    </section>
   );
 }
